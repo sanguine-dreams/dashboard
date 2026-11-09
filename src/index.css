@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+/* 
+  NEW TAILWIND V4 THEME CONFIGURATION
+  Define your custom colors and fonts here.
+*/
+@theme {
+  /* Custom Nude Palette */
+  --color-nude-50: #fdfcf8;
+  --color-nude-100: #f7f3eb;
+  --color-nude-200: #ede3d0;
+  --color-nude-300: #d9cbb0;
+  --color-nude-400: #bfa38a;
+  --color-nude-500: #a6856e;
+  --color-nude-600: #8c6a56;
+  --color-nude-700: #705445;
+  --color-nude-800: #5b443a;
+  --color-nude-900: #4d3a33;
+
+  /* Custom Rustic Palette */
+  --color-rustic-green: #5c6b56;
+  --color-rustic-brown: #8c735a;
+  --color-rustic-gold: #c9a962;
+  --color-rustic-cream: #f5f1e8;
+
+  /* Custom Fonts */
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Lato", sans-serif;
+  --font-mono: "Fira Code", monospace;
+
+  /* Custom Shadows */
+  --shadow-soft: 0 2px 15px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-large: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Base Styles */
+html {
+  @apply antialiased;
+}
+
+body {
+  @apply bg-nude-50 text-gray-800 font-sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif;
+}
+
+/* Custom Components */
+@layer components {
+.btn-primary {
+  @apply bg-rustic-green text-white px-6 py-3 rounded-lg 
+         hover:bg-rustic-green/90 transition duration-300 
+         font-medium shadow-soft;
+}
+  .btn-secondary {
+    @apply bg-nude-200 text-rustic-brown px-6 py-3 rounded-lg 
+           hover:bg-nude-300 transition duration-300 
+           font-medium border border-nude-300;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-soft border border-nude-200 
+           p-6 transition duration-300 hover:shadow-medium;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 border border-nude-300 rounded-lg 
+           bg-white focus:outline-none focus:ring-2 focus:ring-rustic-green 
+           focus:border-transparent transition duration-200;
+  }
+  
+  .tag {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium 
+           bg-rustic-green/10 text-rustic-green border border-rustic-green/20;
+  }
+}
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Fira+Code:wght@400&display=swap');
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-nude-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-nude-400);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-nude-500);
+}
